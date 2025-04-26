@@ -1,0 +1,15 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../../../../6.5.2_bcd2bin/hdl/bcd2bin.sv" \
+"../../../../../../hdl/bin2bcd.sv" \
+"../../../../../../../6.5.1_early_detection_debounce2/hdl/early_detection_debounce.sv" \
+"../../../../../../hdl/fibonacci.sv" \
+"../../../../../../hdl/fibonacci_top.sv" \
+"../../../../../../../6.5.1_early_detection_debounce2/hdl/hex_sseg_disp.sv" \
+"../../../../../../tb/fibonacci_v1_tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

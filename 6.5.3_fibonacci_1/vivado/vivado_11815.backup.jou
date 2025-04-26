@@ -1,0 +1,50 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Fri Apr 25 17:24:56 2025
+# Process ID         : 11815
+# Current directory  : /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado
+# Command line       : vivado
+# Log file           : /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/vivado.log
+# Journal file       : /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/vivado.jou
+# Running On         : oliver-fw13
+# Platform           : Linuxmint
+# Operating System   : Linux Mint 22.1
+# Processor Detail   : AMD Ryzen 5 7640U w/ Radeon 760M Graphics
+# CPU Frequency      : 2940.721 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 15907 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 18054 MB
+# Available Virtual  : 14803 MB
+#-----------------------------------------------------------
+start_gui
+create_project fibonacci_v1 /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1 -part xc7a100tcsg324-1
+set_property board_part digilentinc.com:nexys4_ddr:part0:1.1 [current_project]
+add_files -norecurse {/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/bin2bcd.sv /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.2_bcd2bin/hdl/bcd2bin.sv /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci.sv}
+update_compile_order -fileset sources_1
+add_files -norecurse {/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/hex_sseg_disp.sv /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/early_detection_debounce.sv}
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/tb/fibonacci_v1_tb.sv
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+launch_simulation
+source fibonacci_v1_tb.tcl
+restart
+run all
+close_sim
+launch_simulation
+source fibonacci_v1_tb.tcl
+close_sim
+launch_simulation
+source fibonacci_v1_tb.tcl
+restart
+run all
+restart
+run all
+restart

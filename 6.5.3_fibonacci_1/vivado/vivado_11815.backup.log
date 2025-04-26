@@ -1,0 +1,383 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Fri Apr 25 17:24:56 2025
+# Process ID         : 11815
+# Current directory  : /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado
+# Command line       : vivado
+# Log file           : /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/vivado.log
+# Journal file       : /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/vivado.jou
+# Running On         : oliver-fw13
+# Platform           : Linuxmint
+# Operating System   : Linux Mint 22.1
+# Processor Detail   : AMD Ryzen 5 7640U w/ Radeon 760M Graphics
+# CPU Frequency      : 2940.721 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 15907 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 18054 MB
+# Available Virtual  : 14803 MB
+#-----------------------------------------------------------
+start_gui
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /tools/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /tools/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /tools/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /tools/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /tools/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /tools/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /tools/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /tools/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /tools/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /tools/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /tools/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /tools/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+create_project fibonacci_v1 /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1 -part xc7a100tcsg324-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2024.2/data/ip'.
+set_property board_part digilentinc.com:nexys4_ddr:part0:1.1 [current_project]
+add_files -norecurse {/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/bin2bcd.sv /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.2_bcd2bin/hdl/bcd2bin.sv /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci.sv}
+update_compile_order -fileset sources_1
+add_files -norecurse {/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/hex_sseg_disp.sv /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/early_detection_debounce.sv}
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/tb/fibonacci_v1_tb.sv
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/tb/fibonacci_v1_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/tb/fibonacci_v1_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/tb/fibonacci_v1_tb.sv:]
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fibonacci_v1_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2024.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fibonacci_v1_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj fibonacci_v1_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.2_bcd2bin/hdl/bcd2bin.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bcd2bin
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/bin2bcd.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bin2bcd
+ERROR: [VRFC 10-2989] 'ps2_reg' is not declared [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/bin2bcd.sv:81]
+ERROR: [VRFC 10-8530] module 'bin2bcd' is ignored due to previous errors [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/bin2bcd.sv:1]
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/tb/fibonacci_v1_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/bin2bcd.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/tb/fibonacci_v1_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/bin2bcd.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/bin2bcd.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/bin2bcd.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/tb/fibonacci_v1_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/bin2bcd.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/tb/fibonacci_v1_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/bin2bcd.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/bin2bcd.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/bin2bcd.sv:]
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fibonacci_v1_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2024.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fibonacci_v1_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj fibonacci_v1_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.2_bcd2bin/hdl/bcd2bin.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bcd2bin
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/bin2bcd.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bin2bcd
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/early_detection_debounce.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module early_detection_debounce
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fibonacci
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fibonacci_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/hex_sseg_disp.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hex_sseg_disp
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/tb/fibonacci_v1_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fibonacci_v1_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fibonacci_v1_tb_behav xil_defaultlib.fibonacci_v1_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2024.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fibonacci_v1_tb_behav xil_defaultlib.fibonacci_v1_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'val1' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:193]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'val2' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:194]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'val3' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:195]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'val4' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:196]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.early_detection_debounce
+Compiling module xil_defaultlib.bcd2bin
+Compiling module xil_defaultlib.fibonacci
+Compiling module xil_defaultlib.bin2bcd
+Compiling module xil_defaultlib.hex_sseg_disp
+Compiling module xil_defaultlib.fibonacci_top
+Compiling module xil_defaultlib.fibonacci_v1_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fibonacci_v1_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fibonacci_v1_tb_behav -key {Behavioral:sim_1:Functional:fibonacci_v1_tb} -tclbatch {fibonacci_v1_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fibonacci_v1_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fibonacci_v1_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run all
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/tb/fibonacci_v1_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/bin2bcd.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/early_detection_debounce.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/tb/fibonacci_v1_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/tb/fibonacci_v1_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/tb/fibonacci_v1_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/bin2bcd.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/early_detection_debounce.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/bin2bcd.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/bin2bcd.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/tb/fibonacci_v1_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/bin2bcd.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/early_detection_debounce.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/early_detection_debounce.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/early_detection_debounce.sv:]
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fibonacci_v1_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2024.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fibonacci_v1_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj fibonacci_v1_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.2_bcd2bin/hdl/bcd2bin.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bcd2bin
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/bin2bcd.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bin2bcd
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/early_detection_debounce.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module early_detection_debounce
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fibonacci
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fibonacci_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/hex_sseg_disp.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hex_sseg_disp
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/tb/fibonacci_v1_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fibonacci_v1_tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fibonacci_v1_tb_behav xil_defaultlib.fibonacci_v1_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2024.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fibonacci_v1_tb_behav xil_defaultlib.fibonacci_v1_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'val1' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:193]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'val2' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:194]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'val3' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:195]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'val4' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:196]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.early_detection_debounce
+Compiling module xil_defaultlib.bcd2bin
+Compiling module xil_defaultlib.fibonacci
+Compiling module xil_defaultlib.bin2bcd
+Compiling module xil_defaultlib.hex_sseg_disp
+Compiling module xil_defaultlib.fibonacci_top
+Compiling module xil_defaultlib.fibonacci_v1_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fibonacci_v1_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fibonacci_v1_tb_behav -key {Behavioral:sim_1:Functional:fibonacci_v1_tb} -tclbatch {fibonacci_v1_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fibonacci_v1_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fibonacci_v1_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/tb/fibonacci_v1_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/bin2bcd.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/early_detection_debounce.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/tb/fibonacci_v1_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/bin2bcd.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/early_detection_debounce.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/bin2bcd.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/bin2bcd.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/tb/fibonacci_v1_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/bin2bcd.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/early_detection_debounce.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/early_detection_debounce.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/early_detection_debounce.sv:]
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fibonacci_v1_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2024.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fibonacci_v1_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj fibonacci_v1_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.2_bcd2bin/hdl/bcd2bin.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bcd2bin
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/bin2bcd.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bin2bcd
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/early_detection_debounce.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module early_detection_debounce
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fibonacci
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fibonacci_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/hex_sseg_disp.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hex_sseg_disp
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/tb/fibonacci_v1_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fibonacci_v1_tb
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fibonacci_v1_tb_behav xil_defaultlib.fibonacci_v1_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2024.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fibonacci_v1_tb_behav xil_defaultlib.fibonacci_v1_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'val1' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:193]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'val2' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:194]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'val3' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:195]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'val4' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:196]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.early_detection_debounce
+Compiling module xil_defaultlib.bcd2bin
+Compiling module xil_defaultlib.fibonacci
+Compiling module xil_defaultlib.bin2bcd
+Compiling module xil_defaultlib.hex_sseg_disp
+Compiling module xil_defaultlib.fibonacci_top
+Compiling module xil_defaultlib.fibonacci_v1_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fibonacci_v1_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fibonacci_v1_tb_behav -key {Behavioral:sim_1:Functional:fibonacci_v1_tb} -tclbatch {fibonacci_v1_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source fibonacci_v1_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fibonacci_v1_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run all
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run all
+restart
+INFO: [Wavedata 42-604] Simulation restarted

@@ -27,6 +27,7 @@ module fibonacci
         t1_next   = t1_reg;
         n_next    = n_reg; 
         done_tick = 1'b0; 
+        ready     = 1'b0;
         case(op_state)
             IDLE:
             begin
@@ -34,6 +35,7 @@ module fibonacci
                 t1_next   = 'b0;
                 done_tick = 1'b0; 
                 n_next    = 'b0;
+                ready     = 1'b1;
                 if (start)
                 begin
                     t0_next = 'd0; 
@@ -44,6 +46,7 @@ module fibonacci
             end
             OP:
             begin
+                ready = 1'b0;
                 if (n_reg == 'b0)
                 begin
                     t1_next = 'b0;

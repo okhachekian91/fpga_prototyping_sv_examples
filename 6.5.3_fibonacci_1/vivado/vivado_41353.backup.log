@@ -1,0 +1,94 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Fri Apr 25 18:52:45 2025
+# Process ID         : 41353
+# Current directory  : /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado
+# Command line       : vivado
+# Log file           : /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/vivado.log
+# Journal file       : /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/vivado.jou
+# Running On         : oliver-fw13
+# Platform           : Linuxmint
+# Operating System   : Linux Mint 22.1
+# Processor Detail   : AMD Ryzen 5 7640U w/ Radeon 760M Graphics
+# CPU Frequency      : 3888.852 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 15907 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 18054 MB
+# Available Virtual  : 14030 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.xpr
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /tools/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /tools/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /tools/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2024.2/data/ip'.
+open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 7959.875 ; gain = 345.672 ; free physical = 7163 ; free virtual = 12324
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'fibonacci_v1_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2024.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'fibonacci_v1_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj fibonacci_v1_tb_vlog.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fibonacci_v1_tb_behav xil_defaultlib.fibonacci_v1_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2024.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fibonacci_v1_tb_behav xil_defaultlib.fibonacci_v1_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'val1' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:197]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'val2' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:198]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'val3' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:199]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'val4' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:200]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "fibonacci_v1_tb_behav -key {Behavioral:sim_1:Functional:fibonacci_v1_tb} -tclbatch {fibonacci_v1_tb.tcl} -view {/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1_tb_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1_tb_behav.wcfg
+source fibonacci_v1_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'fibonacci_v1_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+run all
+run: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 8155.023 ; gain = 0.133 ; free physical = 6974 ; free virtual = 12214
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Apr 25 18:53:51 2025...

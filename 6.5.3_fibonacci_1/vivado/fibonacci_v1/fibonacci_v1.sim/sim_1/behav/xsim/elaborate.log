@@ -1,0 +1,13 @@
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2024.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fibonacci_v1_tb_behav xil_defaultlib.fibonacci_v1_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'val1' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:197]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'val2' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:198]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'val3' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:199]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'val4' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:200]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel

@@ -1,0 +1,333 @@
+
+*** Running vivado
+    with args -log fibonacci_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source fibonacci_top.tcl
+
+
+****** Vivado v2024.2 (64-bit)
+  **** SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+  **** Start of session at: Fri Apr 25 22:45:01 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source fibonacci_top.tcl -notrace
+Command: synth_design -top fibonacci_top -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 5608
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2125.879 ; gain = 428.746 ; free physical = 6459 ; free virtual = 11393
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11241] undeclared symbol 'done_fib', assumed default net type 'wire' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:172]
+INFO: [Synth 8-11241] undeclared symbol 'ovf', assumed default net type 'wire' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:175]
+INFO: [Synth 8-6157] synthesizing module 'fibonacci_top' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'early_detection_debounce' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/early_detection_debounce.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'early_detection_debounce' (0#1) [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/early_detection_debounce.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'bcd2bin' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.2_bcd2bin/hdl/bcd2bin.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'bcd2bin' (0#1) [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.2_bcd2bin/hdl/bcd2bin.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'fibonacci' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'fibonacci' (0#1) [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'bin2bcd' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/bin2bcd.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'bin2bcd' (0#1) [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/bin2bcd.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'hex_sseg_disp' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/hex_sseg_disp.sv:1]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/hex_sseg_disp.sv:29]
+INFO: [Synth 8-6155] done synthesizing module 'hex_sseg_disp' (0#1) [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/hex_sseg_disp.sv:1]
+WARNING: [Synth 8-689] width (4) of port connection 'val1' does not match port width (8) of module 'hex_sseg_disp' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:197]
+WARNING: [Synth 8-689] width (4) of port connection 'val2' does not match port width (8) of module 'hex_sseg_disp' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:198]
+WARNING: [Synth 8-689] width (4) of port connection 'val3' does not match port width (8) of module 'hex_sseg_disp' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:199]
+WARNING: [Synth 8-689] width (4) of port connection 'val4' does not match port width (8) of module 'hex_sseg_disp' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:200]
+INFO: [Synth 8-6155] done synthesizing module 'fibonacci_top' (0#1) [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:1]
+WARNING: [Synth 8-87] always_comb on 'hex_reg' did not result in combinational logic [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/hex_sseg_disp.sv:32]
+WARNING: [Synth 8-87] always_comb on 'an_reg' did not result in combinational logic [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/hex_sseg_disp.sv:33]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2199.848 ; gain = 502.715 ; free physical = 6364 ; free virtual = 11301
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2217.660 ; gain = 520.527 ; free physical = 6364 ; free virtual = 11301
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2217.660 ; gain = 520.527 ; free physical = 6364 ; free virtual = 11301
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2217.660 ; gain = 0.000 ; free physical = 6364 ; free virtual = 11300
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.srcs/constrs_1/new/fibonacci_v1.xdc]
+Finished Parsing XDC File [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.srcs/constrs_1/new/fibonacci_v1.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.srcs/constrs_1/new/fibonacci_v1.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/fibonacci_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/fibonacci_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2368.410 ; gain = 0.000 ; free physical = 6339 ; free virtual = 11291
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2368.410 ; gain = 0.000 ; free physical = 6339 ; free virtual = 11291
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2368.410 ; gain = 671.277 ; free physical = 6371 ; free virtual = 11322
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2376.414 ; gain = 679.281 ; free physical = 6371 ; free virtual = 11322
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2376.414 ; gain = 679.281 ; free physical = 6371 ; free virtual = 11322
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'db_state_reg' in module 'early_detection_debounce'
+INFO: [Synth 8-802] inferred FSM for state register 'op_state_reg' in module 'bcd2bin'
+INFO: [Synth 8-802] inferred FSM for state register 'op_state_reg' in module 'fibonacci'
+INFO: [Synth 8-802] inferred FSM for state register 'op_state_reg' in module 'bin2bcd'
+INFO: [Synth 8-802] inferred FSM for state register 'op_state_reg' in module 'fibonacci_top'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 DB_IDLE |                               00 |                               00
+                 DB_HIGH |                               01 |                               01
+                 DB_WAIT |                               10 |                               10
+                  DB_LOW |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'db_state_reg' using encoding 'sequential' in module 'early_detection_debounce'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                             0001 |                               00
+                   LATCH |                             0010 |                               01
+                      OP |                             0100 |                               10
+                    DONE |                             1000 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'op_state_reg' using encoding 'one-hot' in module 'bcd2bin'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                              001 |                               00
+                      OP |                              010 |                               01
+                    DONE |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'op_state_reg' using encoding 'one-hot' in module 'fibonacci'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                              001 |                               00
+                      OP |                              010 |                               01
+                    DONE |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'op_state_reg' using encoding 'one-hot' in module 'bin2bcd'
+WARNING: [Synth 8-327] inferring latch for variable 'hex_reg' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/hex_sseg_disp.sv:32]
+WARNING: [Synth 8-327] inferring latch for variable 'an_reg' [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/hex_sseg_disp.sv:33]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                              000 |                              000
+                 BCD2BIN |                              001 |                              001
+            WAIT_BCD2BIN |                              010 |                              010
+                 FIB_GEN |                              011 |                              011
+            WAIT_FIB_GEN |                              100 |                              100
+                 BIN2BCD |                              101 |                              101
+            WAIT_BIN2BCD |                              110 |                              110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'op_state_reg' using encoding 'sequential' in module 'fibonacci_top'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2376.414 ; gain = 679.281 ; free physical = 6371 ; free virtual = 11323
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   20 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 2     
+	   2 Input    5 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 5     
+	   2 Input    3 Bit       Adders := 1     
++---Registers : 
+	               20 Bit    Registers := 3     
+	               14 Bit    Registers := 1     
+	                8 Bit    Registers := 3     
+	                7 Bit    Registers := 1     
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 6     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input   20 Bit        Muxes := 2     
+	   3 Input   20 Bit        Muxes := 2     
+	   7 Input   20 Bit        Muxes := 1     
+	   2 Input   14 Bit        Muxes := 1     
+	   3 Input   14 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 6     
+	   4 Input    8 Bit        Muxes := 2     
+	   8 Input    8 Bit        Muxes := 1     
+	   7 Input    8 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 2     
+	   3 Input    5 Bit        Muxes := 1     
+	   7 Input    5 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 3     
+	   3 Input    4 Bit        Muxes := 5     
+	   3 Input    3 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 1     
+	   7 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 9     
+	   3 Input    2 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 11    
+	   4 Input    1 Bit        Muxes := 2     
+	   3 Input    1 Bit        Muxes := 5     
+	   8 Input    1 Bit        Muxes := 1     
+	   7 Input    1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3917] design fibonacci_top has port sseg[7] driven by constant 1
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2376.414 ; gain = 679.281 ; free physical = 6368 ; free virtual = 11326
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2403.414 ; gain = 706.281 ; free physical = 6301 ; free virtual = 11264
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2438.461 ; gain = 741.328 ; free physical = 6270 ; free virtual = 11233
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2438.461 ; gain = 741.328 ; free physical = 6270 ; free virtual = 11232
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2578.242 ; gain = 881.109 ; free physical = 6158 ; free virtual = 11122
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2578.242 ; gain = 881.109 ; free physical = 6158 ; free virtual = 11122
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2578.242 ; gain = 881.109 ; free physical = 6158 ; free virtual = 11123
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2578.242 ; gain = 881.109 ; free physical = 6158 ; free virtual = 11123
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2578.242 ; gain = 881.109 ; free physical = 6158 ; free virtual = 11123
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2578.242 ; gain = 881.109 ; free physical = 6158 ; free virtual = 11123
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    16|
+|3     |LUT1   |     4|
+|4     |LUT2   |    71|
+|5     |LUT3   |    33|
+|6     |LUT4   |    34|
+|7     |LUT5   |    35|
+|8     |LUT6   |    35|
+|9     |FDRE   |   178|
+|10    |FDSE   |     3|
+|11    |LD     |    12|
+|12    |IBUF   |    11|
+|13    |OBUF   |    16|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2578.242 ; gain = 881.109 ; free physical = 6158 ; free virtual = 11123
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2578.242 ; gain = 730.359 ; free physical = 6157 ; free virtual = 11122
+Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2578.250 ; gain = 881.109 ; free physical = 6157 ; free virtual = 11122
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2578.250 ; gain = 0.000 ; free physical = 6155 ; free virtual = 11121
+INFO: [Netlist 29-17] Analyzing 28 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 12 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2634.270 ; gain = 0.000 ; free physical = 6312 ; free virtual = 11277
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 12 instances were transformed.
+  LD => LDCE (inverted pins: G): 12 instances
+
+Synth Design complete | Checksum: 7d68d321
+INFO: [Common 17-83] Releasing license: Synthesis
+40 Infos, 10 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:18 . Memory (MB): peak = 2634.270 ; gain = 1120.332 ; free physical = 6312 ; free virtual = 11277
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1799.949; main = 1799.949; forked = 269.135
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3293.434; main = 2634.273; forked = 917.016
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2658.281 ; gain = 0.000 ; free physical = 6311 ; free virtual = 11277
+INFO: [Common 17-1381] The checkpoint '/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.runs/synth_1/fibonacci_top.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file fibonacci_top_utilization_synth.rpt -pb fibonacci_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Apr 25 22:45:26 2025...

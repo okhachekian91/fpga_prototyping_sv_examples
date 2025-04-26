@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="fibonacci_v1_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="fibonacci_v1_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="195.401 ns"></ZoomEndTime>
+      <Cursor1Time time="0.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="108"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="37" />
+   <wvobject type="logic" fp_name="/fibonacci_v1_tb/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fibonacci_v1_tb/rst_n">
+      <obj_property name="ElementShortName">rst_n</obj_property>
+      <obj_property name="ObjectShortName">rst_n</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fibonacci_v1_tb/start_btn">
+      <obj_property name="ElementShortName">start_btn</obj_property>
+      <obj_property name="ObjectShortName">start_btn</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fibonacci_v1_tb/u_fibo_v1/sw">
+      <obj_property name="ElementShortName">sw[7:0]</obj_property>
+      <obj_property name="ObjectShortName">sw[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fibonacci_v1_tb/u_fibo_v1/sseg">
+      <obj_property name="ElementShortName">sseg[7:0]</obj_property>
+      <obj_property name="ObjectShortName">sseg[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fibonacci_v1_tb/u_fibo_v1/an">
+      <obj_property name="ElementShortName">an[7:0]</obj_property>
+      <obj_property name="ObjectShortName">an[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fibonacci_v1_tb/u_fibo_v1/start_db">
+      <obj_property name="ElementShortName">start_db</obj_property>
+      <obj_property name="ObjectShortName">start_db</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fibonacci_v1_tb/u_fibo_v1/u_debounce/db_state">
+      <obj_property name="ElementShortName">db_state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">db_state[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fibonacci_v1_tb/u_fibo_v1/u_debounce/db_next">
+      <obj_property name="ElementShortName">db_next[1:0]</obj_property>
+      <obj_property name="ObjectShortName">db_next[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fibonacci_v1_tb/u_fibo_v1/u_debounce/timer_20ms">
+      <obj_property name="ElementShortName">timer_20ms[20:0]</obj_property>
+      <obj_property name="ObjectShortName">timer_20ms[20:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fibonacci_v1_tb/u_fibo_v1/u_debounce/tick_20ms">
+      <obj_property name="ElementShortName">tick_20ms</obj_property>
+      <obj_property name="ObjectShortName">tick_20ms</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fibonacci_v1_tb/u_fibo_v1/bcd_i_next">
+      <obj_property name="ElementShortName">bcd_i_next[7:0]</obj_property>
+      <obj_property name="ObjectShortName">bcd_i_next[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fibonacci_v1_tb/u_fibo_v1/bcd_i_reg">
+      <obj_property name="ElementShortName">bcd_i_reg[7:0]</obj_property>
+      <obj_property name="ObjectShortName">bcd_i_reg[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fibonacci_v1_tb/u_fibo_v1/done_bcd2bin">
+      <obj_property name="ElementShortName">done_bcd2bin</obj_property>
+      <obj_property name="ObjectShortName">done_bcd2bin</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fibonacci_v1_tb/u_fibo_v1/bcd2bin">
+      <obj_property name="ElementShortName">bcd2bin[6:0]</obj_property>
+      <obj_property name="ObjectShortName">bcd2bin[6:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fibonacci_v1_tb/u_fibo_v1/bin_i_next">
+      <obj_property name="ElementShortName">bin_i_next[4:0]</obj_property>
+      <obj_property name="ObjectShortName">bin_i_next[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fibonacci_v1_tb/u_fibo_v1/bin_i_reg">
+      <obj_property name="ElementShortName">bin_i_reg[4:0]</obj_property>
+      <obj_property name="ObjectShortName">bin_i_reg[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fibonacci_v1_tb/u_fibo_v1/start_fib">
+      <obj_property name="ElementShortName">start_fib</obj_property>
+      <obj_property name="ObjectShortName">start_fib</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fibonacci_v1_tb/u_fibo_v1/fibo_num">
+      <obj_property name="ElementShortName">fibo_num[19:0]</obj_property>
+      <obj_property name="ObjectShortName">fibo_num[19:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fibonacci_v1_tb/u_fibo_v1/fibo_i_next">
+      <obj_property name="ElementShortName">fibo_i_next[19:0]</obj_property>
+      <obj_property name="ObjectShortName">fibo_i_next[19:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fibonacci_v1_tb/u_fibo_v1/fibo_i_reg">
+      <obj_property name="ElementShortName">fibo_i_reg[19:0]</obj_property>
+      <obj_property name="ObjectShortName">fibo_i_reg[19:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fibonacci_v1_tb/u_fibo_v1/bin2bcd_rdy">
+      <obj_property name="ElementShortName">bin2bcd_rdy</obj_property>
+      <obj_property name="ObjectShortName">bin2bcd_rdy</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fibonacci_v1_tb/u_fibo_v1/start_bin2bcd">
+      <obj_property name="ElementShortName">start_bin2bcd</obj_property>
+      <obj_property name="ObjectShortName">start_bin2bcd</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fibonacci_v1_tb/u_fibo_v1/bcd0">
+      <obj_property name="ElementShortName">bcd0[3:0]</obj_property>
+      <obj_property name="ObjectShortName">bcd0[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fibonacci_v1_tb/u_fibo_v1/bcd1">
+      <obj_property name="ElementShortName">bcd1[3:0]</obj_property>
+      <obj_property name="ObjectShortName">bcd1[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fibonacci_v1_tb/u_fibo_v1/bcd2">
+      <obj_property name="ElementShortName">bcd2[3:0]</obj_property>
+      <obj_property name="ObjectShortName">bcd2[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fibonacci_v1_tb/u_fibo_v1/bcd3">
+      <obj_property name="ElementShortName">bcd3[3:0]</obj_property>
+      <obj_property name="ObjectShortName">bcd3[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fibonacci_v1_tb/u_fibo_v1/op_state">
+      <obj_property name="ElementShortName">op_state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">op_state[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fibonacci_v1_tb/u_fibo_v1/op_next">
+      <obj_property name="ElementShortName">op_next[2:0]</obj_property>
+      <obj_property name="ObjectShortName">op_next[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fibonacci_v1_tb/u_fibo_v1/start_bcd2bin">
+      <obj_property name="ElementShortName">start_bcd2bin</obj_property>
+      <obj_property name="ObjectShortName">start_bcd2bin</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fibonacci_v1_tb/u_fibo_v1/done_fib">
+      <obj_property name="ElementShortName">done_fib</obj_property>
+      <obj_property name="ObjectShortName">done_fib</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fibonacci_v1_tb/u_fibo_v1/ovf">
+      <obj_property name="ElementShortName">ovf</obj_property>
+      <obj_property name="ObjectShortName">ovf</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fibonacci_v1_tb/u_fibo_v1/done_bin2bcd">
+      <obj_property name="ElementShortName">done_bin2bcd</obj_property>
+      <obj_property name="ObjectShortName">done_bin2bcd</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fibonacci_v1_tb/u_fibo_v1/u_bin2bcd/op_state">
+      <obj_property name="ElementShortName">op_state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">op_state[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fibonacci_v1_tb/u_fibo_v1/u_bin2bcd/op_next">
+      <obj_property name="ElementShortName">op_next[1:0]</obj_property>
+      <obj_property name="ObjectShortName">op_next[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fibonacci_v1_tb/u_fibo_v1/u_fibonacci/ready">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fibonacci_v1_tb/u_fibo_v1/fibo_rdy">
+      <obj_property name="ElementShortName">fibo_rdy</obj_property>
+      <obj_property name="ObjectShortName">fibo_rdy</obj_property>
+   </wvobject>
+</wave_config>

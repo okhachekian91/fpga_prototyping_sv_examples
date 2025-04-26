@@ -1,0 +1,90 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
+| Date         : Fri Apr 25 22:45:55 2025
+| Host         : oliver-fw13 running 64-bit Linux Mint 22.1
+| Command      : report_control_sets -verbose -file fibonacci_top_control_sets_placed.rpt
+| Design       : fibonacci_top
+| Device       : xc7a100t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    12 |
+|    Minimum number of control sets                        |    12 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    39 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    12 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     2 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     1 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     2 |
+| >= 14 to < 16      |     1 |
+| >= 16              |     5 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              12 |            4 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              45 |           13 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             136 |           35 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------------------+------------------------------------------+----------------------------------+------------------+----------------+--------------+
+|        Clock Signal        |               Enable Signal              |         Set/Reset Signal         | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------------------+------------------------------------------+----------------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG             | u_bcd2bin/FSM_onehot_op_state[3]_i_1_n_0 | u_fibonacci/SR[0]                |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG             | u_bcd2bin/E[0]                           | u_fibonacci/SR[0]                |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG             | u_bcd2bin/bin_reg0                       | u_fibonacci/SR[0]                |                1 |              7 |         7.00 |
+|  clk_IBUF_BUFG             | bcd_i_next                               | u_fibonacci/SR[0]                |                1 |              8 |         8.00 |
+| ~u_hex_sseg_disp/p_0_in[3] |                                          |                                  |                4 |             12 |         3.00 |
+|  clk_IBUF_BUFG             | u_bcd2bin/idx_reg[3]_i_1_n_0             | u_fibonacci/SR[0]                |                4 |             12 |         3.00 |
+|  clk_IBUF_BUFG             | u_fibonacci/E[0]                         | u_fibonacci/SR[0]                |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG             | u_bin2bcd/n_reg[3]_i_1__0_n_0            | u_fibonacci/SR[0]                |                5 |             20 |         4.00 |
+|  clk_IBUF_BUFG             | u_fibonacci/t1_reg[19]_i_1_n_0           | u_fibonacci/SR[0]                |                6 |             20 |         3.33 |
+|  clk_IBUF_BUFG             | u_debounce/db_state_reg[0]               | u_debounce/timer_20ms[0]_i_1_n_0 |                6 |             21 |         3.50 |
+|  clk_IBUF_BUFG             | u_fibonacci/n_reg[4]_i_1_n_0             | u_fibonacci/SR[0]                |                8 |             25 |         3.12 |
+|  clk_IBUF_BUFG             |                                          | u_fibonacci/SR[0]                |               13 |             45 |         3.46 |
++----------------------------+------------------------------------------+----------------------------------+------------------+----------------+--------------+
+
+

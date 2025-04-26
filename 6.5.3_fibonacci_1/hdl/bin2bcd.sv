@@ -4,7 +4,7 @@ module bin2bcd
     input  logic            rst_n,
 
     input  logic            start,
-    input  logic [12:0]     bin,
+    input  logic [13:0]     bin,
     output logic            ready,
     output logic            done_tick,
     output logic [3:0]      bcd3,
@@ -19,7 +19,7 @@ enum logic [1:0] {  IDLE = 2'b00,
                     DONE = 2'b10
 } op_state, op_next; 
 
-logic [12:0] p2s_reg, p2s_next; 
+logic [13:0] p2s_reg, p2s_next; 
 logic [3:0]  n_reg, n_next; 
 logic [3:0]  bcd3_reg, bcd2_reg, bcd1_reg, bcd0_reg; 
 logic [3:0]  bcd3_next, bcd2_next, bcd1_next, bcd0_next; 
@@ -51,7 +51,7 @@ end
 
 always_comb
 begin
-    op_next     = IDLE;
+    op_next     = op_state;
     ready       = 1'b0;
     done_tick   = 1'b0;
     p2s_next    = 'b0;
@@ -72,15 +72,15 @@ begin
                 bcd2_next   = 'b0;
                 bcd1_next   = 'b0;
                 bcd0_next   = 'b0;
-                n_next      = 4'b1101;
+                n_next      = 4'b1110;
                 p2s_next    = bin;
             end
         end
         OP:
         begin
-            p2s_next    = ps2_reg << 1; 
+            p2s_next    = p2s_reg << 1; 
 
-            bcd0_next   = {bcd0_temp[2:0], p2s_reg[12]};
+            bcd0_next   = {bcd0_temp[2:0], p2s_reg[13]};
             bcd1_next   = {bcd1_temp[2:0], bcd0_temp[3]};
             bcd2_next   = {bcd2_temp[2:0], bcd1_temp[3]};
             bcd3_next   = {bcd3_temp[2:0], bcd2_temp[3]};
