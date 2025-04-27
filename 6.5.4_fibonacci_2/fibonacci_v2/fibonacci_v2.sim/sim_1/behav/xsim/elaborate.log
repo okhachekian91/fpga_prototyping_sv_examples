@@ -1,0 +1,23 @@
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot fibonacci_v2_tb_behav xil_defaultlib.fibonacci_v2_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'val1' [C:/Users/okhac/Documents/fpga_prototyping_by_sv_examples/6.5.4_fibonacci_2/hdl/fibonacci_v2.sv:191]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'val2' [C:/Users/okhac/Documents/fpga_prototyping_by_sv_examples/6.5.4_fibonacci_2/hdl/fibonacci_v2.sv:192]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'val3' [C:/Users/okhac/Documents/fpga_prototyping_by_sv_examples/6.5.4_fibonacci_2/hdl/fibonacci_v2.sv:193]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'val4' [C:/Users/okhac/Documents/fpga_prototyping_by_sv_examples/6.5.4_fibonacci_2/hdl/fibonacci_v2.sv:194]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "C:/Users/okhac/Documents/fpga_prototyping_by_sv_examples/6.5.4_fibonacci_2/fibonacci_v2/fibonacci_v2.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/okhac/Documents/fpga_prototyping_by_sv_examples/6.5.4_fibonacci_2/fibonacci_v2/fibonacci_v2.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.early_detection_debounce
+Compiling module xil_defaultlib.hex_sseg_disp
+Compiling module xil_defaultlib.fibonacci_v2
+Compiling module xil_defaultlib.fibonacci_v2_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fibonacci_v2_tb_behav

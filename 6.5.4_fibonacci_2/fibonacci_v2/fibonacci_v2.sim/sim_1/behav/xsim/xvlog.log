@@ -1,0 +1,8 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/okhac/Documents/fpga_prototyping_by_sv_examples/6.5.1_early_detection_debounce2/hdl/early_detection_debounce.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module early_detection_debounce
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/okhac/Documents/fpga_prototyping_by_sv_examples/6.5.4_fibonacci_2/hdl/fibonacci_v2.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fibonacci_v2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/okhac/Documents/fpga_prototyping_by_sv_examples/6.5.1_early_detection_debounce2/hdl/hex_sseg_disp.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hex_sseg_disp
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/okhac/Documents/fpga_prototyping_by_sv_examples/6.5.4_fibonacci_2/tb/fibonacci_v2_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fibonacci_v2_tb
