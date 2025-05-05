@@ -55,7 +55,7 @@ module fibonacci_v2
         case(op_state)
             IDLE:
             begin   
-                if (start_btn)
+                if (start_db)
                 begin
                     bcd0_next = sw[3:0];
                     bcd1_next = sw[7:4];
@@ -180,7 +180,7 @@ module fibonacci_v2
     (
         .clk                (clk),
         .rst_n              (rst_n),
-        .sw                 (!start_btn),
+        .sw                 (start_btn),
         .db                 (start_db)
     );
 
