@@ -4,13 +4,10 @@ module bin2bcd_ext
     input  logic            rst_n,
 
     input  logic            start,
-    input  logic [13:0]     bin,
+    input  logic [19:0]     bin,
     output logic            ready,
     output logic            done_tick,
-    output logic [3:0]      bcd3,
-    output logic [3:0]      bcd2,
-    output logic [3:0]      bcd1,
-    output logic [3:0]      bcd0
+    output logic [3:0]      bcd [7:0]
 );
 
 
@@ -19,11 +16,11 @@ enum logic [1:0] {  IDLE = 2'b00,
                     DONE = 2'b10
 } op_state, op_next; 
 
-logic [13:0] p2s_reg, p2s_next; 
-logic [3:0]  n_reg, n_next; 
-logic [3:0]  bcd3_reg, bcd2_reg, bcd1_reg, bcd0_reg; 
-logic [3:0]  bcd3_next, bcd2_next, bcd1_next, bcd0_next; 
-logic [3:0]  bcd3_temp, bcd2_temp, bcd1_temp, bcd0_temp; 
+logic [19:0] p2s_reg, p2s_next; 
+logic [4:0]  n_reg, n_next; 
+logic [3:0]  bcd_reg [7:0]; 
+logic [3:0]  bcd_next [7:0];
+logic [3:0]  bcd_temp [7:0]; 
 
 always_ff @(posedge clk)
 begin
@@ -32,20 +29,15 @@ begin
         op_state        <= IDLE; 
         p2s_reg         <= 'b0;
         n_reg           <= 'b0;
-        bcd3_reg        <= 'b0;
-        bcd2_reg        <= 'b0;
-        bcd1_reg        <= 'b0;
-        bcd0_reg        <= 'b0;
+        bcd_reg         <= '{default: 'b0};
     end
     else
     begin
         op_state        <= op_next;
         p2s_reg         <= p2s_next;
         n_reg           <= n_next;
-        bcd3_reg        <= bcd3_next;
-        bcd2_reg        <= bcd2_next;
-        bcd1_reg        <= bcd1_next;
-        bcd0_reg        <= bcd0_next;
+        for (i = 0; i < 8 ; i = i +1)
+           bcd_reg[i] = bcd_next[i];
     end
 end
 
@@ -55,35 +47,31 @@ begin
     ready       = 1'b0;
     done_tick   = 1'b0;
     p2s_next    = 'b0;
-    bcd0_next   = bcd0_reg;
-    bcd1_next   = bcd1_reg;
-    bcd2_next   = bcd2_reg;
-    bcd3_next   = bcd3_reg;
     n_next      = n_reg;
+    for (i = 0 ; i < 8 ; i = i + 1)
+       bcd_next[i] = bcd_reg[i];
     case(op_state)
         IDLE:
         begin
             ready = 1'b1;
-
             if (start)
             begin
                 op_next     = OP;
-                bcd3_next   = 'b0;
-                bcd2_next   = 'b0;
-                bcd1_next   = 'b0;
-                bcd0_next   = 'b0;
-                n_next      = 4'b1110;
+                bcd_next    = '{default: 'b0};
+                n_next      = 5'b10011;
                 p2s_next    = bin;
             end
         end
         OP:
         begin
             p2s_next    = p2s_reg << 1; 
-
-            bcd0_next   = {bcd0_temp[2:0], p2s_reg[13]};
-            bcd1_next   = {bcd1_temp[2:0], bcd0_temp[3]};
-            bcd2_next   = {bcd2_temp[2:0], bcd1_temp[3]};
-            bcd3_next   = {bcd3_temp[2:0], bcd2_temp[3]};
+            for (i = 0; i < 8 ; i = i + 1)
+            begin
+               if (i == 0)
+                  bcd_next[i] = {bcd_temp[i][2:0], p2s_reg[19]};
+               else
+                  bcd_next[i] = {bcd_temp[i][2:0], bcd_temp[i-1][3]};
+            end
             n_next      = n_reg - 1; 
             if (n_next == 0)
                 op_next     = DONE; 
@@ -97,14 +85,12 @@ begin
     endcase
 end
 
-assign bcd0_temp = (bcd0_reg > 4) ? bcd0_reg + 3 : bcd0_reg;
-assign bcd1_temp = (bcd1_reg > 4) ? bcd1_reg + 3 : bcd1_reg; 
-assign bcd2_temp = (bcd2_reg > 4) ? bcd2_reg + 3 : bcd2_reg;
-assign bcd3_temp = (bcd3_reg > 4) ? bcd3_reg + 3 : bcd3_reg;
-
-assign bcd0 = bcd0_reg;
-assign bcd1 = bcd1_reg;
-assign bcd2 = bcd2_reg;
-assign bcd3 = bcd3_reg;
+generate 
+   for (genvar i = 0; i < 8 ; i = i + 1)
+   begin
+      assign bcd_temp[i] = (bcd_reg[i] > 4) ? bcd_reg[i] + 3 : bcd_reg[i];
+      assign bcd[i] = bcd_reg[i];
+   end
+endgenerate
 
 endmodule
