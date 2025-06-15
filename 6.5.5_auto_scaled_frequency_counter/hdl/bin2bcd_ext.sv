@@ -6,14 +6,15 @@ module bin2bcd_ext
     input  logic            start,
     input  logic [19:0]     bin,
     output logic            ready,
-    output logic            done_tick,
+    output logic            done,
     output logic [3:0]      bcd [7:0]
 );
 
 
-enum logic [1:0] {  IDLE = 2'b00,
-                    OP   = 2'b01,
-                    DONE = 2'b10
+enum logic [1:0] {  IDLE       = 2'b00,
+                    OP         = 2'b01,
+                    DONE       = 2'b10,
+                    BCD_ADJUST = 2'b11
 } op_state, op_next; 
 
 logic [19:0] p2s_reg, p2s_next; 
@@ -40,7 +41,7 @@ begin
         p2s_reg         <= p2s_next;
         n_reg           <= n_next;
         dp_reg          <= dp_next;
-        for (i = 0; i < 8 ; i = i +1)
+        for (int i = 0; i < 8 ; i = i +1)
            bcd_reg[i] = bcd_next[i];
     end
 end
@@ -49,11 +50,11 @@ always_comb
 begin
     op_next     = op_state;
     ready       = 1'b0;
-    done_tick   = 1'b0;
+    done   = 1'b0;
     p2s_next    = 'b0;
     dp_next     = dp_reg;
     n_next      = n_reg;
-    for (i = 0 ; i < 8 ; i = i + 1)
+    for (int i = 0 ; i < 8 ; i = i + 1)
        bcd_next[i] = bcd_reg[i];
     case(op_state)
         IDLE:
@@ -63,15 +64,15 @@ begin
             begin
                 op_next     = OP;
                 bcd_next    = '{default: 'b0};
-                n_next      = 5'b10011;
+                n_next      = 5'b10100;
                 p2s_next    = bin;
-                dp_next     = 'b0;
+                dp_next     = 'd0;
             end
         end
         OP:
         begin
             p2s_next    = p2s_reg << 1; 
-            for (i = 0; i < 8 ; i = i + 1)
+            for (int i = 0; i < 8 ; i = i + 1)
             begin
                if (i == 0)
                   bcd_next[i] = {bcd_temp[i][2:0], p2s_reg[19]};
@@ -82,18 +83,11 @@ begin
             if (n_next == 0)
                 op_next     = DONE; 
         end
-	BCD_ADJUST:
+	    BCD_ADJUST:
         begin
            dp_next = dp_reg + 1;
-           for (i = 0 ; i < 8 ; i = i + 1)
-           begin
-              if (i == 0)
-                 bcd_next[i] = 'b0;
-              else
-                 bcd_next[i] = bcd_next[i-1];
-              end
-           end
-           op_next = BCD_DONE;
+           bcd_next = {bcd_reg[6:0], 4'b0};
+           op_next = DONE;
         end
         DONE:
         begin
@@ -101,7 +95,7 @@ begin
                op_next = BCD_ADJUST;
             else
             begin
-               done_tick   = 1'b1;
+               done   = 1'b1;
                op_next     = IDLE;
             end
         end

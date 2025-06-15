@@ -7,7 +7,7 @@ module period_counter
    input  logic 	sig,
 
    output logic 	ready,
-   output logic 	done_tick,
+   output logic 	done,
 
    output logic [19:0]  period
 );
@@ -21,7 +21,7 @@ module period_counter
                     } state_reg, state_next;
 
    logic                       	    edge_tick; 
-   logic 			    sig_dly; 
+   logic 			                sig_dly; 
    logic [$clog2(CLK_US_COUNT)-1:0] t_next,t_reg;
    logic [19:0]                     p_next,p_reg;
 
@@ -39,7 +39,7 @@ module period_counter
     begin
        state_next = state_reg;
        ready      = 1'b0; 
-       done_tick  = 1'b0;
+       done  = 1'b0;
        t_next     = t_reg;
        p_next     = p_reg;
        case(state_reg)
@@ -71,7 +71,7 @@ module period_counter
           end
           DONE:
           begin
-             done_tick = 1'b1;
+             done       = 1'b1;
              state_next = IDLE;
           end
        endcase
@@ -93,6 +93,6 @@ module period_counter
        end
     end
 
-    assign period = p_reg;
+    assign period = p_reg + 1;
 
 endmodule
