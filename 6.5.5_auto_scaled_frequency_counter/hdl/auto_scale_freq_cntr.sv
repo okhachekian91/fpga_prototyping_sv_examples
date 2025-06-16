@@ -5,11 +5,9 @@ module auto_scaled_freq_cntr
 
    input  logic 	start,
    input  logic 	sig,
-
-   output logic [3:0]   bcd3,
-   output logic [3:0]   bcd2,
-   output logic [3:0]   bcd1,
-   output logic [3:0]   bcd0
+   
+   output logic [7:0]   sseg,
+   output logic [7:0]   an
 );
 
    enum logic [1:0] { IDLE   = 2'b00,
@@ -24,6 +22,8 @@ module auto_scaled_freq_cntr
    logic        prd_done, div_done, b2b_done;
 
    logic [3:0]  bcd [7:0];
+   logic [2:0]  dp;
+
    period_counter u_prd_cnt
    (
       .clk             (clk),
@@ -59,9 +59,22 @@ module auto_scaled_freq_cntr
       .bin            (quo),
       .ready          (),
       .done           (b2b_done),
-      .bcd            (bcd)
+      .bcd            (bcd),
+      .dp             (dp)
    );
 
+   hex_sseg_disp u_hex_sseg_disp
+   (
+      .clk            (clk),
+      .rst_n          (rst_n),
+      .bcd0           (bcd[4]),
+      .bcd1           (bcd[5]),
+      .bcd2           (bcd[6]),
+      .bcd3           (bcd[7]),
+      .dp             (dp),
+      .sseg           (sseg),
+      .an             (an)
+   ); 
    always_ff @(posedge clk)
    begin
       if (!rst_n)

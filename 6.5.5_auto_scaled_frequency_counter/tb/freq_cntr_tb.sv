@@ -6,10 +6,8 @@ module freq_cntr_tb ();
    
    logic		start;
    logic 		sig, sig_10hz; 
-   logic [3:0] 		bcd0;
-   logic [3:0] 		bcd1;
-   logic [3:0] 		bcd2;
-   logic [3:0] 		bcd3;
+   logic [7:0]  sseg;
+   logic [7:0]  an;
 
    auto_scaled_freq_cntr u_freq_cntr
    (
@@ -17,10 +15,8 @@ module freq_cntr_tb ();
       .rst_n               (rst_n),
       .start               (start),
       .sig                 (sig_10hz),
-      .bcd3                (bcd3),
-      .bcd2                (bcd2),
-      .bcd1                (bcd1),
-      .bcd0                (bcd0)
+      .sseg                (sseg),
+      .an                  (an)
    );
 
 

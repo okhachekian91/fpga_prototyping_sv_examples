@@ -7,7 +7,8 @@ module bin2bcd_ext
     input  logic [19:0]     bin,
     output logic            ready,
     output logic            done,
-    output logic [3:0]      bcd [7:0]
+    output logic [3:0]      bcd [7:0],
+    output logic [2:0]      dp
 );
 
 
@@ -111,4 +112,5 @@ generate
    end
 endgenerate
 
+assign dp = dp_reg;
 endmodule
