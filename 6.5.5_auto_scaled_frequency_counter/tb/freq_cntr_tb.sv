@@ -9,17 +9,25 @@ module freq_cntr_tb ();
    logic [7:0]  sseg;
    logic [7:0]  an;
 
-   auto_scaled_freq_cntr u_freq_cntr
+//   auto_scaled_freq_cntr u_freq_cntr
+//   (
+//      .clk                 (clk),
+//      .rst_n               (rst_n),
+//      .start               (start),
+//      .sig                 (sig_10hz),
+//      .sseg                (sseg),
+//      .an                  (an)
+//   );
+
+   freq_cntr_test u_freq_cntr
    (
-      .clk                 (clk),
-      .rst_n               (rst_n),
-      .start               (start),
-      .sig                 (sig_10hz),
-      .sseg                (sseg),
-      .an                  (an)
+      .clk                (clk),
+      .rst_n              (rst_n),
+      .start              (start),
+      .sseg               (),
+      .an                 ()
    );
-
-
+   
    initial
    begin
       clk = 1'b0;

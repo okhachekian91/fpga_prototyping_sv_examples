@@ -44,7 +44,7 @@ module freq_cntr_test
          sig_cntr_10ms <= 'b0;
          sig_10ms      <= 'b0;
       end
-      else if (sig_cntr_10ms == TOGGLE_5MS)
+      else if (sig_cntr_10ms == TOGGLE_1MS)
       begin
          sig_cntr_10ms <= 'b0;
          sig_10ms      <= 1'b1;

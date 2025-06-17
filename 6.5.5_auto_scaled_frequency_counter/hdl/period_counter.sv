@@ -93,6 +93,6 @@ module period_counter
        end
     end
 
-    assign period = p_reg + 1;
+    assign period = p_reg;
 
 endmodule
