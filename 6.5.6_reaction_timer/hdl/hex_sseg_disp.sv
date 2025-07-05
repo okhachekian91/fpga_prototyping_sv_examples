@@ -15,8 +15,6 @@ module hex_sseg_disp
 
     logic [16:0] counter; 
     logic [3:0]  hex; 
-    logic [3:0]  dp_decode;
-    logic        dp_bit;
 
     always_ff @(posedge clk)
     begin
@@ -33,25 +31,21 @@ module hex_sseg_disp
             begin
                 hex     = bcd0;
                 an      = 8'b11111110;
-                dp_bit  = !dp_decode[0];
             end
             2'b01:
             begin
                 hex     = bcd1;
                 an      = 8'b11111101;
-                dp_bit  = !dp_decode[1];
             end
             2'b10:
             begin
                 hex     = bcd2;
                 an      = 8'b11111011;
-                dp_bit  = !dp_decode[2];
             end
             2'b11:
             begin
                 hex     = bcd3;
                 an      = 8'b11110111;
-                dp_bit  = !dp_decode[3];
             end
         endcase
     end

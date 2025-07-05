@@ -12,13 +12,13 @@ module reaction_timer
     output logic [7:0]  an
 );
     localparam MS_COUNT  = 100000;
+    //localparam MS_COUNT  = 10;
     localparam SEC_COUNT = 100000000;
-
+    //localparam SEC_COUNT = 1000;
+    
     logic [16:0]    timer;
     logic [13:0]    ms_count;
     logic [3:0]     lfsr;
-
-    logic           start_db;
 
     logic [26:0]    stim_timer;
     logic [4:0]     sec_count;
@@ -28,6 +28,8 @@ module reaction_timer
 	logic 			start_db, stop_db, clr_db;
 	
 	logic [3:0] 	bcd0, bcd1, bcd2, bcd3;
+	
+	logic           start_b2b;
 	
     always_ff @(posedge clk)
     begin
@@ -69,6 +71,11 @@ module reaction_timer
             stim_timer <= 'b0;
             sec_count  <= 'b0;
         end
+        else if (state_reg == IDLE)
+        begin
+           stim_timer <= 'b0;
+           sec_count  <= 'b0;
+        end
         else if (state_reg == START)
         begin
             if (stim_timer == SEC_COUNT-1)
@@ -97,6 +104,7 @@ module reaction_timer
    begin
         state_next = state_reg;
         stim_next  = stim_led;
+        start_b2b  = 1'b0;
         case(state_reg)
             IDLE:
             begin
@@ -119,6 +127,7 @@ module reaction_timer
                 if (stop_db)
                 begin
                     stim_next = 1'b0;
+                    start_b2b = 1'b1;
                     state_next = DONE;
                 end
             end
@@ -130,7 +139,8 @@ module reaction_timer
             default:
             begin
                 state_next = IDLE;
-                stim_led   = 1'b0;
+                stim_next  = 1'b0;
+                start_b2b  = 1'b0;
             end
         endcase
     end
@@ -151,51 +161,51 @@ module reaction_timer
 
    early_detection_debounce u_start_db
    (
-		.clk			(clk),
-		.rst_n			(rst_n),
-		.sw				(start),
-		.db				(start_db)
+      .clk		(clk),
+      .rst_n	(rst_n),
+      .sw		(start),
+      .db		(start_db)
    );
    
    early_detection_debounce u_stop_db
    (
-		.clk			(clk),
-		.rst_n			(rst_n),
-		.sw 			(stop),
-		.db				(stop_db)
+      .clk		(clk),
+      .rst_n		(rst_n),
+      .sw 		(stop),
+      .db		(stop_db)
    );
    
    early_detection_debounce u_clr_db
    (
-		.clk 			(clk),
-		.rst_n			(rst_n),
-		.sw				(clr),
-		.db				(clr_db)
+      .clk 		(clk),
+      .rst_n		(rst_n),
+      .sw		(clear),
+      .db		(clr_db)
    );
    
-    bin2bcd u_bin2bcd
-    (
-        .clk            (clk),
-        .rst_n          (rst_n),
-        .start          (start_b2b),
-        .bin            (ms_count),
-        .ready          (),
-        .done_tick      (),
-        .bcd3           (bcd3),
-        .bcd2           (bcd2),
-        .bcd1           (bcd1),
-        .bcd0           (bcd0)
-    );
+   bin2bcd u_bin2bcd
+   (
+       .clk             (clk),
+       .rst_n           (rst_n),
+       .start           (start_b2b),
+       .bin             (ms_count),
+       .ready           (),
+       .done_tick       (),
+       .bcd3            (bcd3),
+       .bcd2            (bcd2),
+       .bcd1            (bcd1),
+       .bcd0            (bcd0)
+   );
     
-	hex_sseg_disp u_hex_sseg_disp
-	(
-		.clk			(clk),
-		.rst_n 			(rst_n),
-		.bcd3			(bcd3),
-		.bcd2			(bcd2),
-		.bcd1			(bcd1),
-		.bcd0			(bcd0),
-		.sseg			(sseg),
-		.an				(an)
-	);
+   hex_sseg_disp u_hex_sseg_disp
+   (
+      .clk		(clk),
+      .rst_n 		(rst_n),
+      .bcd3		(bcd3),
+      .bcd2		(bcd2),
+      .bcd1		(bcd1),
+      .bcd0		(bcd0),
+      .sseg		(sseg),
+      .an		(an)
+    );
 endmodule
