@@ -8,7 +8,7 @@ module babbage_engine_tb ();
    logic           done;
    logic [31:0]    f;
    
-   babbage_engine dut
+   babbage_engine_v2 dut
    (
       .clk           (clk),
       .rst_n         (rst_n),
