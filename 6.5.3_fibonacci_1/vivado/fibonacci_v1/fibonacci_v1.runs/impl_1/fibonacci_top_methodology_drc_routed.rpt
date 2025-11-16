@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date         : Fri Apr 25 22:46:12 2025
+| Date         : Fri Apr 25 23:07:47 2025
 | Host         : oliver-fw13 running 64-bit Linux Mint 22.1
 | Command      : report_methodology -file fibonacci_top_methodology_drc_routed.rpt -pb fibonacci_top_methodology_drc_routed.pb -rpx fibonacci_top_methodology_drc_routed.rpx
 | Design       : fibonacci_top

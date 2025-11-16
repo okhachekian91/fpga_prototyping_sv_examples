@@ -194,10 +194,10 @@ module fibonacci_top
     (
         .clk                (clk),
         .rst_n              (rst_n),
-        .val1               (bcd0),
-        .val2               (bcd1),
-        .val3               (bcd2),
-        .val4               (bcd3),
+        .val1               ({bcd1,bcd0}),
+        .val2               ({bcd3,bcd2}),
+        .val3               ('b0),
+        .val4               ('b0),
 
         .sseg               (sseg),
         .an                 (an)

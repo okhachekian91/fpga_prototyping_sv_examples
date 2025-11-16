@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date         : Fri Apr 25 22:45:26 2025
+| Date         : Fri Apr 25 23:07:01 2025
 | Host         : oliver-fw13 running 64-bit Linux Mint 22.1
 | Command      : report_utilization -file fibonacci_top_utilization_synth.rpt -pb fibonacci_top_utilization_synth.pb
 | Design       : fibonacci_top
@@ -150,11 +150,11 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | FDRE     |  178 |        Flop & Latch |
-| LUT2     |   71 |                 LUT |
+| LUT2     |   75 |                 LUT |
 | LUT6     |   35 |                 LUT |
-| LUT5     |   35 |                 LUT |
 | LUT4     |   34 |                 LUT |
 | LUT3     |   33 |                 LUT |
+| LUT5     |   31 |                 LUT |
 | OBUF     |   16 |                  IO |
 | CARRY4   |   16 |          CarryLogic |
 | LDCE     |   12 |        Flop & Latch |

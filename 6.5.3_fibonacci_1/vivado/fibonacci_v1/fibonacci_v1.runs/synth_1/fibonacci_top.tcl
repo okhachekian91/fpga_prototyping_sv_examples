@@ -56,6 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -92,6 +93,8 @@ read_xdc /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/v
 set_property used_in_implementation false [get_files /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.srcs/constrs_1/new/fibonacci_v1.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.srcs/utils_1/imports/synth_1/fibonacci_top.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date         : Fri Apr 25 22:45:55 2025
+| Date         : Fri Apr 25 23:07:29 2025
 | Host         : oliver-fw13 running 64-bit Linux Mint 22.1
 | Command      : report_control_sets -verbose -file fibonacci_top_control_sets_placed.rpt
 | Design       : fibonacci_top
@@ -58,7 +58,7 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              12 |            4 |
+| No           | No                    | No                     |              12 |            3 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |              45 |           13 |
 | Yes          | No                    | No                     |               0 |            0 |
@@ -76,12 +76,12 @@ Table of Contents
 |  clk_IBUF_BUFG             | u_bcd2bin/FSM_onehot_op_state[3]_i_1_n_0 | u_fibonacci/SR[0]                |                1 |              4 |         4.00 |
 |  clk_IBUF_BUFG             | u_bcd2bin/E[0]                           | u_fibonacci/SR[0]                |                1 |              5 |         5.00 |
 |  clk_IBUF_BUFG             | u_bcd2bin/bin_reg0                       | u_fibonacci/SR[0]                |                1 |              7 |         7.00 |
-|  clk_IBUF_BUFG             | bcd_i_next                               | u_fibonacci/SR[0]                |                1 |              8 |         8.00 |
-| ~u_hex_sseg_disp/p_0_in[3] |                                          |                                  |                4 |             12 |         3.00 |
-|  clk_IBUF_BUFG             | u_bcd2bin/idx_reg[3]_i_1_n_0             | u_fibonacci/SR[0]                |                4 |             12 |         3.00 |
-|  clk_IBUF_BUFG             | u_fibonacci/E[0]                         | u_fibonacci/SR[0]                |                2 |             14 |         7.00 |
+|  clk_IBUF_BUFG             | bcd_i_next                               | u_fibonacci/SR[0]                |                3 |              8 |         2.67 |
+| ~u_hex_sseg_disp/p_0_in[3] |                                          |                                  |                3 |             12 |         4.00 |
+|  clk_IBUF_BUFG             | u_bcd2bin/idx_reg[3]_i_1_n_0             | u_fibonacci/SR[0]                |                3 |             12 |         4.00 |
+|  clk_IBUF_BUFG             | u_fibonacci/E[0]                         | u_fibonacci/SR[0]                |                3 |             14 |         4.67 |
 |  clk_IBUF_BUFG             | u_bin2bcd/n_reg[3]_i_1__0_n_0            | u_fibonacci/SR[0]                |                5 |             20 |         4.00 |
-|  clk_IBUF_BUFG             | u_fibonacci/t1_reg[19]_i_1_n_0           | u_fibonacci/SR[0]                |                6 |             20 |         3.33 |
+|  clk_IBUF_BUFG             | u_fibonacci/t1_reg[19]_i_1_n_0           | u_fibonacci/SR[0]                |                4 |             20 |         5.00 |
 |  clk_IBUF_BUFG             | u_debounce/db_state_reg[0]               | u_debounce/timer_20ms[0]_i_1_n_0 |                6 |             21 |         3.50 |
 |  clk_IBUF_BUFG             | u_fibonacci/n_reg[4]_i_1_n_0             | u_fibonacci/SR[0]                |                8 |             25 |         3.12 |
 |  clk_IBUF_BUFG             |                                          | u_fibonacci/SR[0]                |               13 |             45 |         3.46 |

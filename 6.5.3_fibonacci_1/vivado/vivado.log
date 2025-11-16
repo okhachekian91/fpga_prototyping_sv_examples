@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Fri Apr 25 22:39:26 2025
-# Process ID         : 3734
+# Start of session at: Fri Apr 25 22:58:43 2025
+# Process ID         : 23865
 # Current directory  : /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado
 # Command line       : vivado
 # Log file           : /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/vivado.log
@@ -13,13 +13,13 @@
 # Platform           : Linuxmint
 # Operating System   : Linux Mint 22.1
 # Processor Detail   : AMD Ryzen 5 7640U w/ Radeon 760M Graphics
-# CPU Frequency      : 4539.528 MHz
+# CPU Frequency      : 3470.471 MHz
 # CPU Physical cores : 6
 # CPU Logical cores  : 12
 # Host memory        : 15907 MB
 # Swap memory        : 2147 MB
 # Total Virtual      : 18054 MB
-# Available Virtual  : 15022 MB
+# Available Virtual  : 13953 MB
 #-----------------------------------------------------------
 start_gui
 open_project /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.xpr
@@ -32,20 +32,8 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2024.2/data/ip'.
-open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:06 . Memory (MB): peak = 7980.824 ; gain = 347.055 ; free physical = 8609 ; free virtual = 13161
+open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:06 . Memory (MB): peak = 8087.137 ; gain = 476.180 ; free physical = 6826 ; free virtual = 12159
 update_compile_order -fileset sources_1
-file mkdir /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.srcs/constrs_1
-file mkdir /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.srcs/constrs_1/new
-close [ open /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.srcs/constrs_1/new/fibonacci_v1.xdc w ]
-add_files -fileset constrs_1 /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.srcs/constrs_1/new/fibonacci_v1.xdc
-launch_runs impl_1 -jobs 6
-[Fri Apr 25 22:45:00 2025] Launched synth_1...
-Run output will be captured here: /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.runs/synth_1/runme.log
-[Fri Apr 25 22:45:00 2025] Launched impl_1...
-Run output will be captured here: /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.runs/impl_1/runme.log
-launch_runs impl_1 -to_step write_bitstream -jobs 6
-[Fri Apr 25 22:50:41 2025] Launched impl_1...
-Run output will be captured here: /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.runs/impl_1/runme.log
 open_hw_manager
 connect_hw_server -allow_non_jtag
 INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
@@ -86,21 +74,40 @@ INFO: [Labtools 27-2221] Launch Output:
 
 
 
-disconnect_hw_server localhost:3121
-connect_hw_server -allow_non_jtag
-INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
-INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
-INFO: [Labtools 27-3417] Launching cs_server...
-INFO: [Labtools 27-2221] Launch Output:
-
-
-******** Xilinx cs_server v2024.2.0
-  ****** Build date   : Oct 30 2024-11:19:07
-    **** Build number : 2024.2.1730312347
-      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
-      ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
-
-
-
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A4C4BFA
+set_property PROGRAM.FILE {/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.runs/impl_1/fibonacci_top.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a100t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.runs/impl_1/fibonacci_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/hex_sseg_disp.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/hex_sseg_disp.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/hex_sseg_disp.sv:]
+reset_run synth_1
+INFO: [Project 1-1160] Copying file /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.runs/synth_1/fibonacci_top.dcp to /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.srcs/utils_1/imports/synth_1 and adding it to utils fileset
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/hex_sseg_disp.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/hdl/fibonacci_top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/hex_sseg_disp.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.1_early_detection_debounce2/hdl/hex_sseg_disp.sv:]
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+[Fri Apr 25 23:06:35 2025] Launched synth_1...
+Run output will be captured here: /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.runs/synth_1/runme.log
+[Fri Apr 25 23:06:35 2025] Launched impl_1...
+Run output will be captured here: /home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/oliver/Documents/fpga_prototyping_sv_examples/6.5.3_fibonacci_1/vivado/fibonacci_v1/fibonacci_v1.runs/impl_1/fibonacci_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
 exit
-INFO: [Common 17-206] Exiting Vivado at Fri Apr 25 22:53:51 2025...
+INFO: [Common 17-206] Exiting Vivado at Fri Apr 25 23:09:06 2025...
